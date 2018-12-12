@@ -1,0 +1,35 @@
+import React, {Component} from 'react'
+// import Job components
+import Job from "./Job"
+class WorkHistory extends Component {
+  render() {
+    console.log('???');
+    /* receive `jobsList` array as props from App compnonent */
+
+    return (
+      <section>
+        <h4>Work Experience</h4>
+        <div className="skills-list">
+          { /*
+              map over jobsList array and return an array of <Job/> components
+              NOTE: you must pass values from the each job object
+                    to the <Job> component as props...
+            */
+             this.props.JobsListInfo.map(function(jobsList){
+              return <Job  title= {jobsList.title}
+                           company= {jobsList.company}
+                           description= {jobsList.description}
+                           yearsStart= {jobsList.years.start}
+                           yearsEnd= {jobsList.years.end} />
+                         })
+
+
+
+          }
+        </div>
+      </section>
+    )
+  }
+}
+
+export default WorkHistory;

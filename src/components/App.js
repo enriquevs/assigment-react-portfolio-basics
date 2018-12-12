@@ -9,7 +9,10 @@ class App extends Component{
     return(
       <div id= 'app-container'>
         <PortfolioFixed/>
-        <PortfolioContent/>
+        <PortfolioContent SkillsInfo= {this.props.SkillsInfo}
+                          EduListInfo= {this.props.EduListInfo}
+                          JobsListInfo= {this.props.JobsListInfo}
+        />
       </div>
     );
   }
